@@ -6,7 +6,4 @@ class Character < ActiveRecord::Base
     "#{self.name} always says: #{self.catchphrase}"
   end
   
-  def actors_list
-    
-  end
 end
