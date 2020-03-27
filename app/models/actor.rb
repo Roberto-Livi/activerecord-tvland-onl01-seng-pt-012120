@@ -8,6 +8,13 @@ class Actor < ActiveRecord::Base
   end
   
   def list_roles
+    list_names = []
+    self.characters.each {|c| list_names << c.name}.uniq
+    
+    list_shows = []
+    self.shows.each {|s| list_shows << s.name}.uniq
+    
+    list_names.map {|name| roles << name + " - " + list_shows[0]}.flatten.uniq
     
   end
 end
